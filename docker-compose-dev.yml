@@ -1,0 +1,20 @@
+services:
+  app:
+    build:
+      context: .
+      target: dev
+      args:
+        ENV_FILE: .env.dev
+      # Specify the platform for buildx
+      platforms:
+        - linux/amd64
+    image: kaio-dev
+    container_name: kaio_dev
+    ports:
+      - "8000:8000"
+      - "5901:5901" # Expose the VNC port
+    environment:
+      - DISPLAY=:1
+      - TZ=America/Los_Angeles
+    cap_add:
+      - SYS_ADMIN

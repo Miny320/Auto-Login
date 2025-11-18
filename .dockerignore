@@ -1,0 +1,25 @@
+# Node modules and build artifacts
+node_modules
+
+# Exclude dist from build context, as it’s generated in the Docker build process
+dist
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs
+*.log
+
+# Docker-related files
+.dockerignore
+Dockerfile*
+docker-compose-*.yml
+
+# Editor and OS-specific files
+.idea
+.vscode
+*.swp
+*~
+.DS_Store
+Thumbs.db
